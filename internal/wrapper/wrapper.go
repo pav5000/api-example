@@ -49,8 +49,8 @@ func Wrap[
 			Error: err.Error(),
 		}
 		rawJSON, _ := json.Marshal(structError)
-		w.Write(rawJSON)
-		w.Write([]byte("\n")) // just for easier life with curl
+		_, _ = w.Write(rawJSON)
+		_, _ = w.Write([]byte("\n")) // just for easier life with curl
 	}
 }
 
